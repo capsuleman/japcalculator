@@ -40,6 +40,9 @@ workflows:
   build_and_test:
     jobs:
       - build
+      - audit:
+          requires:
+            - build
       - tests:
           requires:
             - build
